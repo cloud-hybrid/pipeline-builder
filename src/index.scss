@@ -1,0 +1,51 @@
+$prefix: "cds" !default;
+
+@use "@carbon/feature-flags" with (
+    $feature-flags: (
+        "enable-css-custom-properties": true,
+        "enable-use-controlled-state-with-value": true,
+        "enable-css-grid": true,
+        "enable-v11-release": true,
+    )
+);
+
+@use "@carbon/react";
+@use "@carbon/grid";
+
+@use "@carbon/react/scss/reset" as *;
+@use "@carbon/react/scss/type" as *;
+@use "@carbon/react/scss/zone" as *;
+@use "@carbon/react/scss/colors" as *;
+@use "@carbon/react/scss/themes" as *;
+@use "@carbon/react/scss/spacing" as *;
+@use "@carbon/react/scss/breakpoint" as *;
+@use "@carbon/react/scss/feature-flags" as *;
+
+@use "@carbon/react/scss/theme" as *;
+
+@forward "@carbon/grid";
+
+.cds--content {
+    background: var(--cds-background);
+    margin-top: 3.0rem;
+    min-height: calc(100vh - 3.0rem);
+}
+
+html {
+    @include theme($g100);
+}
+
+.cds--content .cds--css-grid {
+    max-width: 100%;
+    @include breakpoint(md) {
+        padding-left:  20px;
+        padding-right: 20px;
+    }
+}
+
+@media (min-width: 42rem) {
+    .cds--grid--no-gutter {
+        padding-left:  1rem;
+        padding-right: 1rem;
+    }
+}
