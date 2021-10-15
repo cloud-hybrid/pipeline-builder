@@ -1,5 +1,5 @@
 {
-    "name": "@cloud-technology/ui-template",
+    "name": "@cloud-technology/pipeline-builder",
     "version": "0.0.0",
     "private": true,
     "scripts": {
@@ -17,7 +17,6 @@
         "@carbon/ibm-cloud-cognitive": "^0.89.0",
         "@carbon/icons-react": "^10.39.0",
         "@carbon/react": "^0.6.0",
-        "@toast-ui/react-editor": "^3.1.0",
         "axios": "^0.21.4",
         "axios-cache-adapter": "^2.7.3",
         "carbon-components": "^10.45.0",
