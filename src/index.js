@@ -19,7 +19,6 @@ import { default as Skeleton } from "./Page-Loader";
 import { default as Menu } from "./components/Menu/Index";
 
 /// import { default as Footer } from "./components/Footer/Index";
-
 import {
     BrowserRouter as Navigator,
     HashRouter as Router
@@ -31,6 +30,18 @@ const Application = Import(() => {
     );
 });
 
+const ICB = Import(() => {
+    return import("./components/Informational-Corner-Button/Index").then(
+        (Component) => Component
+    );
+});
+
+const BTT = Import(() => {
+    return import("./components/Back-To-Top/Index").then(
+        (Component) => Component
+    );
+});
+
 const DOM = () => (
     <React.StrictMode>
         <Profiler id={"Navigation"} onRender={ Vitals }>
@@ -39,6 +50,8 @@ const DOM = () => (
                     <Menu/>
                     <Suspense fallback={ (<Skeleton Loader={ false } />) }>
                         <Application />
+                        <ICB/>
+                        <BTT/>
                     </Suspense>
                     {/*<Footer/>*/}
                 </Router>
